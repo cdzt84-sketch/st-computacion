@@ -7,75 +7,104 @@
 
 <style>
 body{
-    font-family: Arial, sans-serif;
-    background:#f3f4f6;
     margin:0;
-    padding:20px;
+    padding:24px 14px;
+    background:#eef1f3;
+    font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    color:#2b2f33;
 }
 
 .card{
-    max-width:900px;
-    margin:auto;
-    background:white;
-    border-radius:20px;
-    padding:30px;
-    box-shadow:0 5px 20px rgba(0,0,0,.15);
+    max-width:620px;
+    margin:0 auto;
+    background:#fff;
+    border-radius:16px;
+    padding:28px 28px 34px;
+    box-shadow:0 8px 22px rgba(0,0,0,.22);
 }
 
 h1{
-    color:#0d1b5e;
-    margin-top:0;
+    margin:0 0 28px;
+    color:#07154a;
+    font-size:36px;
+    font-weight:500;
+    line-height:1.15;
+}
+
+h2{
+    font-size:24px;
+    line-height:1.25;
+    margin:0 0 14px;
+    color:#202428;
+    font-weight:700;
 }
 
 .section{
-    margin-top:25px;
-    padding-top:20px;
-    border-top:1px solid #ddd;
-}
-
-.label{
-    font-weight:bold;
-    width:180px;
-    display:inline-block;
+    margin-top:28px;
+    padding-top:28px;
+    border-top:1px solid #cfcfcf;
 }
 
 .row{
+    display:grid;
+    grid-template-columns:150px 1fr;
+    gap:6px;
     margin-bottom:10px;
+    font-size:22px;
+    line-height:1.25;
+}
+
+.label{
+    font-weight:700;
 }
 
 .download{
-    color:#3b82f6;
+    color:#3b61a3;
     text-decoration:none;
 }
 
-.download:hover{
-    text-decoration:underline;
-}
-
-.valid{
-    color:#16a34a;
-    font-weight:bold;
-}
-
-.token-row{
-    display:flex;
-    align-items:flex-start;
-    margin-bottom:10px;
-}
-
-.token-label{
-    font-weight:bold;
-    width:180px;
-    flex-shrink:0;
-}
-
-.token-value{
-    font-size:12px;
+.token{
     white-space:nowrap;
+    overflow:hidden;
+    display:block;
+}
+
+@media(max-width:480px){
+    body{
+        padding:0;
+        background:#eef1f3;
+    }
+
+    .card{
+        margin:0 auto;
+        width:calc(100% - 28px);
+        box-sizing:border-box;
+        border-radius:16px;
+        padding:32px 28px;
+    }
+
+    h1{
+        font-size:36px;
+        margin-bottom:28px;
+    }
+
+    h2{
+        font-size:24px;
+    }
+
+    .row{
+        grid-template-columns:130px 1fr;
+        font-size:18px;
+        margin-bottom:9px;
+    }
+
+    .token{
+        font-size:18px;
+    }
 }
 </style>
-
 </head>
+
 <body>
 
 <div class="card">
@@ -84,7 +113,7 @@ h1{
 
     <div class="row">
         <span class="label">Empleado:</span>
-        Cristhian Duber Zarate Timoteo
+        <span>Cristhian Duber Zarate Timoteo</span>
     </div>
 
     <div class="row">
@@ -94,71 +123,65 @@ h1{
 
     <div class="row">
         <span class="label">Descargar Documento:</span>
-        <a class="download" href="https://stcomputacion.buk.cl/users/sign_in">
-            Descargar
-        </a>
+        <a class="download" href="https://stcomputacion.buk.cl/users/sign_in">Descargar</a>
     </div>
 
     <div class="section">
-
-        <h2>Firmado por el Empleado</h2>
+        <h2>Firmado por el Empleado:</h2>
 
         <div class="row">
             <span class="label">Nombre:</span>
-            Cristhian Duber Zarate Timoteo
+            <span>Cristhian Duber Zarate Timoteo</span>
         </div>
 
         <div class="row">
-            <span class="label">RUT:</span>
-            22.486.159-1
+            <span class="label">Número de Documento:</span>
+            <span>22.486.159-1</span>
         </div>
 
         <div class="row">
-            <span class="label">Fecha Firma:</span>
-            16/10/2021 09:41
+            <span class="label">Fecha de Firma:</span>
+            <span>16/10/2021 a las 09:41 - TZ: GMT-3</span>
         </div>
 
         <div class="row">
-            <span class="label">IP:</span>
-            201.241.56.196
+            <span class="label">Dirección IP:</span>
+            <span>201.241.56.196</span>
         </div>
 
-        <div class="token-row">
-            <span class="token-label">Token:</span>
-            <span class="token-value">7577e8c19c1008ae1ff1c00a48d4f607b7bf64eed0304ef8c5cafa58da1a835cb</span>
+        <div class="row">
+            <span class="label">Token:</span>
+            <span class="token">7577e8c19c1008ae1ff1c00a48d4f607b7bf64eed0304ef8c5cafa58da1a835cb</span>
         </div>
-
     </div>
 
     <div class="section">
-
-        <h2>Firmado por Representante Legal</h2>
+        <h2>Firmado por el Representante Legal:</h2>
 
         <div class="row">
             <span class="label">Nombre:</span>
-            Ema Pérez Bobadilla
+            <span>Ema De Los Ángeles Pérez Bobadilla</span>
         </div>
 
         <div class="row">
-            <span class="label">RUT:</span>
-            15.215.457-7
+            <span class="label">Número de Documento:</span>
+            <span>15.215.457-7</span>
         </div>
 
         <div class="row">
-            <span class="label">Fecha Firma:</span>
-            18/10/2021 16:35
+            <span class="label">Fecha de Firma:</span>
+            <span>18/10/2021 a las 16:35 - TZ: GMT-3</span>
         </div>
 
         <div class="row">
-            <span class="label">IP:</span>
-            201.189.68.4
+            <span class="label">Dirección IP:</span>
+            <span>201.189.68.4</span>
         </div>
 
-        <div class="token-row">
-            <span class="token-label">Token:</span>
-            <span class="token-value">73fd98b894e2e1aa46f8f111f515a228dcb0247bf64eed0304ef8c5cafa58da1a835cb</span>
+        <div class="row">
+            <span class="label">Token:</span>
+            <span class="token">73fd98b894e2e1aa46f8f111f515a228dcb0247bf64eed0304ef8c5cafa58da1a835cb</span>
         </div>
-
     </div>
 
 </div>
@@ -170,12 +193,11 @@ function actualizarFecha() {
     const dia = String(ahora.getDate()).padStart(2, '0');
     const mes = String(ahora.getMonth() + 1).padStart(2, '0');
     const anio = ahora.getFullYear();
-
     const horas = String(ahora.getHours()).padStart(2, '0');
     const minutos = String(ahora.getMinutes()).padStart(2, '0');
 
     document.getElementById("fechaCreacion").textContent =
-        `${dia}/${mes}/${anio} ${horas}:${minutos}`;
+        `${dia}/${mes}/${anio} a las ${horas}:${minutos} - TZ: GMT-3`;
 }
 
 actualizarFecha();

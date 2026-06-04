@@ -21,7 +21,7 @@ body{
 
 .card{
     width:100%;
-    max-width:720px;
+    max-width:760px;
     margin:0 auto;
     background:#fff;
     border-radius:18px;
@@ -31,7 +31,7 @@ body{
 }
 
 h1{
-    margin:0 0 28px;
+    margin:0 0 20px;
     color:#07164f;
     font-size:clamp(34px, 5vw, 42px);
     font-weight:500;
@@ -46,6 +46,17 @@ h2{
     line-height:1.25;
 }
 
+.status{
+    background:#e9f7ef;
+    color:#1f7a3f;
+    border:1px solid #bfe6cc;
+    border-radius:10px;
+    padding:12px 14px;
+    margin-bottom:24px;
+    font-size:18px;
+    font-weight:700;
+}
+
 .section{
     margin-top:30px;
     padding-top:30px;
@@ -54,7 +65,7 @@ h2{
 
 .row{
     display:grid;
-    grid-template-columns:155px minmax(0, 1fr);
+    grid-template-columns:165px minmax(0, 1fr);
     gap:10px;
     margin-bottom:10px;
     font-size:20px;
@@ -72,10 +83,22 @@ h2{
 .download{
     color:#2d56a3;
     text-decoration:none;
+    font-weight:500;
 }
 
 .download:hover{
     text-decoration:underline;
+}
+
+.note{
+    margin-top:16px;
+    padding:12px 14px;
+    background:#f7f8fa;
+    border:1px solid #e1e3e6;
+    border-radius:10px;
+    font-size:15px;
+    line-height:1.35;
+    color:#444;
 }
 
 .token{
@@ -84,6 +107,15 @@ h2{
     overflow:hidden;
     text-overflow:clip;
     min-width:0;
+}
+
+.footer{
+    margin-top:28px;
+    padding-top:18px;
+    border-top:1px solid #e1e1e1;
+    font-size:13px;
+    color:#777;
+    text-align:center;
 }
 
 @media(max-width:600px){
@@ -100,6 +132,10 @@ h2{
         grid-template-columns:145px minmax(0, 1fr);
         font-size:18px;
         gap:8px;
+    }
+
+    .status{
+        font-size:16px;
     }
 }
 
@@ -124,6 +160,10 @@ h2{
     h2{
         font-size:24px;
     }
+
+    .note{
+        font-size:14px;
+    }
 }
 </style>
 </head>
@@ -133,6 +173,10 @@ h2{
 <div class="card">
 
     <h1>Documento Válido</h1>
+
+    <div class="status">
+        ✓ Documento verificado correctamente
+    </div>
 
     <div class="row">
         <div class="label">Empleado:</div>
@@ -145,12 +189,28 @@ h2{
     </div>
 
     <div class="row">
+        <div class="label">Documento:</div>
+        <div class="value">Contrato de Trabajo.pdf</div>
+    </div>
+
+    <div class="row">
+        <div class="label">Estado:</div>
+        <div class="value">Firmado electrónicamente</div>
+    </div>
+
+    <div class="row">
         <div class="label">Descargar Documento:</div>
         <div class="value">
-            <a class="download" href="https://stcomputacion.buk.cl/users/sign_in">
+            <a class="download"
+               href="/contratos/Contrato_Cristhian_Zarate.pdf"
+               target="_blank">
                 Descargar
             </a>
         </div>
+    </div>
+
+    <div class="note">
+        La información presentada corresponde a los datos registrados durante el proceso de firma electrónica del documento.
     </div>
 
     <div class="section">
@@ -164,6 +224,11 @@ h2{
         <div class="row">
             <div class="label">Número de Documento:</div>
             <div class="value">22.486.159-1</div>
+        </div>
+
+        <div class="row">
+            <div class="label">Email:</div>
+            <div class="value">cdzt84@outlook.cl</div>
         </div>
 
         <div class="row">
@@ -196,6 +261,11 @@ h2{
         </div>
 
         <div class="row">
+            <div class="label">Email:</div>
+            <div class="value">Ema.Perez@st-computacion.com</div>
+        </div>
+
+        <div class="row">
             <div class="label">Fecha de Firma:</div>
             <div class="value">18/10/2021 a las 16:35 - TZ: GMT-3</div>
         </div>
@@ -209,6 +279,10 @@ h2{
             <div class="label">Token:</div>
             <div class="value token">73fd98b894e2e1aa46f8f111f515a228dcb0247bf64eed0304ef8c5cafa58da1a835cb</div>
         </div>
+    </div>
+
+    <div class="footer">
+        Código de validación: 50bf23369fd20abe596db41860dcb024
     </div>
 
 </div>

@@ -6,51 +6,58 @@
 <title>Validación de Documento</title>
 
 <style>
+*{
+    box-sizing:border-box;
+}
+
 body{
     margin:0;
-    padding:24px 14px;
-    background:#eef1f3;
+    min-height:100vh;
+    padding:24px;
+    background:#eef1f4;
     font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-    color:#2b2f33;
+    color:#20242a;
 }
 
 .card{
-    max-width:620px;
+    width:100%;
+    max-width:720px;
     margin:0 auto;
     background:#fff;
-    border-radius:16px;
-    padding:28px 28px 34px;
-    box-shadow:0 8px 22px rgba(0,0,0,.22);
+    border-radius:18px;
+    padding:32px;
+    box-shadow:0 8px 24px rgba(0,0,0,.18);
+    overflow:hidden;
 }
 
 h1{
     margin:0 0 28px;
-    color:#07154a;
-    font-size:36px;
+    color:#07164f;
+    font-size:clamp(34px, 5vw, 42px);
     font-weight:500;
-    line-height:1.15;
+    line-height:1.1;
 }
 
 h2{
-    font-size:24px;
-    line-height:1.25;
-    margin:0 0 14px;
-    color:#202428;
+    margin:0 0 18px;
+    color:#111;
+    font-size:clamp(22px, 4vw, 28px);
     font-weight:700;
+    line-height:1.25;
 }
 
 .section{
-    margin-top:28px;
-    padding-top:28px;
-    border-top:1px solid #cfcfcf;
+    margin-top:30px;
+    padding-top:30px;
+    border-top:1px solid #d6d6d6;
 }
 
 .row{
     display:grid;
-    grid-template-columns:150px 1fr;
-    gap:6px;
+    grid-template-columns:155px minmax(0, 1fr);
+    gap:10px;
     margin-bottom:10px;
-    font-size:22px;
+    font-size:20px;
     line-height:1.25;
 }
 
@@ -58,48 +65,64 @@ h2{
     font-weight:700;
 }
 
+.value{
+    min-width:0;
+}
+
 .download{
-    color:#3b61a3;
+    color:#2d56a3;
     text-decoration:none;
 }
 
-.token{
-    white-space:nowrap;
-    overflow:hidden;
-    display:block;
+.download:hover{
+    text-decoration:underline;
 }
 
-@media(max-width:480px){
+.token{
+    display:block;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:clip;
+    min-width:0;
+}
+
+@media(max-width:600px){
     body{
-        padding:0;
-        background:#eef1f3;
+        padding:14px;
     }
 
     .card{
-        margin:0 auto;
-        width:calc(100% - 28px);
-        box-sizing:border-box;
+        padding:26px 24px;
         border-radius:16px;
-        padding:32px 28px;
+    }
+
+    .row{
+        grid-template-columns:145px minmax(0, 1fr);
+        font-size:18px;
+        gap:8px;
+    }
+}
+
+@media(max-width:420px){
+    body{
+        padding:10px;
+    }
+
+    .card{
+        padding:24px 20px;
+    }
+
+    .row{
+        grid-template-columns:128px minmax(0, 1fr);
+        font-size:16px;
     }
 
     h1{
-        font-size:36px;
-        margin-bottom:28px;
+        font-size:34px;
     }
 
     h2{
         font-size:24px;
-    }
-
-    .row{
-        grid-template-columns:130px 1fr;
-        font-size:18px;
-        margin-bottom:9px;
-    }
-
-    .token{
-        font-size:18px;
     }
 }
 </style>
@@ -112,46 +135,50 @@ h2{
     <h1>Documento Válido</h1>
 
     <div class="row">
-        <span class="label">Empleado:</span>
-        <span>Cristhian Duber Zarate Timoteo</span>
+        <div class="label">Empleado:</div>
+        <div class="value">Cristhian Duber Zarate Timoteo</div>
     </div>
 
     <div class="row">
-        <span class="label">Fecha Creación:</span>
-        <span id="fechaCreacion"></span>
+        <div class="label">Fecha Creación:</div>
+        <div class="value" id="fechaCreacion"></div>
     </div>
 
     <div class="row">
-        <span class="label">Descargar Documento:</span>
-        <a class="download" href="https://stcomputacion.buk.cl/users/sign_in">Descargar</a>
+        <div class="label">Descargar Documento:</div>
+        <div class="value">
+            <a class="download" href="https://stcomputacion.buk.cl/users/sign_in">
+                Descargar
+            </a>
+        </div>
     </div>
 
     <div class="section">
         <h2>Firmado por el Empleado:</h2>
 
         <div class="row">
-            <span class="label">Nombre:</span>
-            <span>Cristhian Duber Zarate Timoteo</span>
+            <div class="label">Nombre:</div>
+            <div class="value">Cristhian Duber Zarate Timoteo</div>
         </div>
 
         <div class="row">
-            <span class="label">Número de Documento:</span>
-            <span>22.486.159-1</span>
+            <div class="label">Número de Documento:</div>
+            <div class="value">22.486.159-1</div>
         </div>
 
         <div class="row">
-            <span class="label">Fecha de Firma:</span>
-            <span>16/10/2021 a las 09:41 - TZ: GMT-3</span>
+            <div class="label">Fecha de Firma:</div>
+            <div class="value">16/10/2021 a las 09:41 - TZ: GMT-3</div>
         </div>
 
         <div class="row">
-            <span class="label">Dirección IP:</span>
-            <span>201.241.56.196</span>
+            <div class="label">Dirección IP:</div>
+            <div class="value">201.241.56.196</div>
         </div>
 
         <div class="row">
-            <span class="label">Token:</span>
-            <span class="token">7577e8c19c1008ae1ff1c00a48d4f607b7bf64eed0304ef8c5cafa58da1a835cb</span>
+            <div class="label">Token:</div>
+            <div class="value token">7577e8c19c1008ae1ff1c00a48d4f607b7bf64eed0304ef8c5cafa58da1a835cb</div>
         </div>
     </div>
 
@@ -159,28 +186,28 @@ h2{
         <h2>Firmado por el Representante Legal:</h2>
 
         <div class="row">
-            <span class="label">Nombre:</span>
-            <span>Ema De Los Ángeles Pérez Bobadilla</span>
+            <div class="label">Nombre:</div>
+            <div class="value">Ema De Los Ángeles Pérez Bobadilla</div>
         </div>
 
         <div class="row">
-            <span class="label">Número de Documento:</span>
-            <span>15.215.457-7</span>
+            <div class="label">Número de Documento:</div>
+            <div class="value">15.215.457-7</div>
         </div>
 
         <div class="row">
-            <span class="label">Fecha de Firma:</span>
-            <span>18/10/2021 a las 16:35 - TZ: GMT-3</span>
+            <div class="label">Fecha de Firma:</div>
+            <div class="value">18/10/2021 a las 16:35 - TZ: GMT-3</div>
         </div>
 
         <div class="row">
-            <span class="label">Dirección IP:</span>
-            <span>201.189.68.4</span>
+            <div class="label">Dirección IP:</div>
+            <div class="value">201.189.68.4</div>
         </div>
 
         <div class="row">
-            <span class="label">Token:</span>
-            <span class="token">73fd98b894e2e1aa46f8f111f515a228dcb0247bf64eed0304ef8c5cafa58da1a835cb</span>
+            <div class="label">Token:</div>
+            <div class="value token">73fd98b894e2e1aa46f8f111f515a228dcb0247bf64eed0304ef8c5cafa58da1a835cb</div>
         </div>
     </div>
 

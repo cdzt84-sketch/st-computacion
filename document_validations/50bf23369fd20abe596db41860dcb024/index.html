@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Validación de Documento</title>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    min-height:100vh;
+    padding:24px;
+    background:#eef1f4;
+    font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    color:#20242a;
+}
+
+.card{
+    width:100%;
+    max-width:720px;
+    margin:0 auto;
+    background:#fff;
+    border-radius:18px;
+    padding:32px;
+    box-shadow:0 8px 24px rgba(0,0,0,.18);
+    overflow:hidden;
+}
+
+h1{
+    margin:0 0 28px;
+    color:#07164f;
+    font-size:clamp(34px, 5vw, 42px);
+    font-weight:500;
+    line-height:1.1;
+}
+
+h2{
+    margin:0 0 18px;
+    color:#111;
+    font-size:clamp(22px, 4vw, 28px);
+    font-weight:700;
+    line-height:1.25;
+}
+
+.section{
+    margin-top:30px;
+    padding-top:30px;
+    border-top:1px solid #d6d6d6;
+}
+
+.row{
+    display:grid;
+    grid-template-columns:155px minmax(0, 1fr);
+    gap:10px;
+    margin-bottom:10px;
+    font-size:20px;
+    line-height:1.25;
+}
+
+.label{
+    font-weight:700;
+}
+
+.value{
+    min-width:0;
+}
+
+.download{
+    color:#2d56a3;
+    text-decoration:none;
+}
+
+.download:hover{
+    text-decoration:underline;
+}
+
+.token{
+    display:block;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:clip;
+    min-width:0;
+}
+
+@media(max-width:600px){
+    body{
+        padding:14px;
+    }
+
+    .card{
+        padding:26px 24px;
+        border-radius:16px;
+    }
+
+    .row{
+        grid-template-columns:145px minmax(0, 1fr);
+        font-size:18px;
+        gap:8px;
+    }
+}
+
+@media(max-width:420px){
+    body{
+        padding:10px;
+    }
+
+    .card{
+        padding:24px 20px;
+    }
+
+    .row{
+        grid-template-columns:128px minmax(0, 1fr);
+        font-size:16px;
+    }
+
+    h1{
+        font-size:34px;
+    }
+
+    h2{
+        font-size:24px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <h1>Documento Válido</h1>
+
+    <div class="row">
+        <div class="label">Empleado:</div>
+        <div class="value">Cristhian Duber Zarate Timoteo</div>
+    </div>
+
+    <div class="row">
+        <div class="label">Fecha Creación:</div>
+        <div class="value" id="fechaCreacion"></div>
+    </div>
+
+    <div class="row">
+        <div class="label">Descargar Documento:</div>
+        <div class="value">
+            <a class="download" href="https://stcomputacion.buk.cl/users/sign_in">
+                Descargar
+            </a>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Firmado por el Empleado:</h2>
+
+        <div class="row">
+            <div class="label">Nombre:</div>
+            <div class="value">Cristhian Duber Zarate Timoteo</div>
+        </div>
+
+        <div class="row">
+            <div class="label">Número de Documento:</div>
+            <div class="value">22.486.159-1</div>
+        </div>
+
+        <div class="row">
+            <div class="label">Fecha de Firma:</div>
+            <div class="value">16/10/2021 a las 09:41 - TZ: GMT-3</div>
+        </div>
+
+        <div class="row">
+            <div class="label">Dirección IP:</div>
+            <div class="value">201.241.56.196</div>
+        </div>
+
+        <div class="row">
+            <div class="label">Token:</div>
+            <div class="value token">7577e8c19c1008ae1ff1c00a48d4f607b7bf64eed0304ef8c5cafa58da1a835cb</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Firmado por el Representante Legal:</h2>
+
+        <div class="row">
+            <div class="label">Nombre:</div>
+            <div class="value">Ema De Los Ángeles Pérez Bobadilla</div>
+        </div>
+
+        <div class="row">
+            <div class="label">Número de Documento:</div>
+            <div class="value">15.215.457-7</div>
+        </div>
+
+        <div class="row">
+            <div class="label">Fecha de Firma:</div>
+            <div class="value">18/10/2021 a las 16:35 - TZ: GMT-3</div>
+        </div>
+
+        <div class="row">
+            <div class="label">Dirección IP:</div>
+            <div class="value">201.189.68.4</div>
+        </div>
+
+        <div class="row">
+            <div class="label">Token:</div>
+            <div class="value token">73fd98b894e2e1aa46f8f111f515a228dcb0247bf64eed0304ef8c5cafa58da1a835cb</div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+function actualizarFecha() {
+    const ahora = new Date();
+
+    const dia = String(ahora.getDate()).padStart(2, '0');
+    const mes = String(ahora.getMonth() + 1).padStart(2, '0');
+    const anio = ahora.getFullYear();
+    const horas = String(ahora.getHours()).padStart(2, '0');
+    const minutos = String(ahora.getMinutes()).padStart(2, '0');
+
+    document.getElementById("fechaCreacion").textContent =
+        `${dia}/${mes}/${anio} a las ${horas}:${minutos} - TZ: GMT-3`;
+}
+
+actualizarFecha();
+</script>
+
+</body>
+</html>

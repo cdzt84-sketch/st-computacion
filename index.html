@@ -14,7 +14,7 @@ body{
 }
 
 .card{
-    max-width:700px;
+    max-width:900px;
     margin:auto;
     background:white;
     border-radius:20px;
@@ -26,12 +26,7 @@ h1{
     color:#0d1b5e;
     margin-top:0;
 }
-.token{
-    display:inline-block;
-    max-width:450px;
-    word-break:break-all;
-    vertical-align:top;
-}
+
 .section{
     margin-top:25px;
     padding-top:20px;
@@ -61,6 +56,23 @@ h1{
     color:#16a34a;
     font-weight:bold;
 }
+
+.token-row{
+    display:flex;
+    align-items:flex-start;
+    margin-bottom:10px;
+}
+
+.token-label{
+    font-weight:bold;
+    width:180px;
+    flex-shrink:0;
+}
+
+.token-value{
+    font-size:12px;
+    white-space:nowrap;
+}
 </style>
 
 </head>
@@ -82,8 +94,7 @@ h1{
 
     <div class="row">
         <span class="label">Descargar Documento:</span>
-        <a class="download"
-           href="https://stcomputacion.buk.cl/users/sign_in">
+        <a class="download" href="https://stcomputacion.buk.cl/users/sign_in">
             Descargar
         </a>
     </div>
@@ -112,9 +123,9 @@ h1{
             201.241.56.196
         </div>
 
-        <div class="row">
-            <span class="label">Token:</span>
-            7577e8c19c1008ae1ff1c00a48d4f607b7bf64eed0304ef8c5cafa58da1a835cb
+        <div class="token-row">
+            <span class="token-label">Token:</span>
+            <span class="token-value">7577e8c19c1008ae1ff1c00a48d4f607b7bf64eed0304ef8c5cafa58da1a835cb</span>
         </div>
 
     </div>
@@ -143,9 +154,9 @@ h1{
             201.189.68.4
         </div>
 
-        <div class="row">
-            <span class="label">Token:</span>
-            73fd98b894e2e1aa46f8f111f515a228dcb0247bf64eed0304ef8c5cafa58da1a835cb
+        <div class="token-row">
+            <span class="token-label">Token:</span>
+            <span class="token-value">73fd98b894e2e1aa46f8f111f515a228dcb0247bf64eed0304ef8c5cafa58da1a835cb</span>
         </div>
 
     </div>

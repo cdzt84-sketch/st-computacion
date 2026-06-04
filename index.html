@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Validación de Documento</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f3f4f6;
+    margin:0;
+    padding:20px;
+}
+
+.card{
+    max-width:700px;
+    margin:auto;
+    background:white;
+    border-radius:20px;
+    padding:30px;
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+}
+
+h1{
+    color:#0d1b5e;
+    margin-top:0;
+}
+
+.section{
+    margin-top:25px;
+    padding-top:20px;
+    border-top:1px solid #ddd;
+}
+
+.label{
+    font-weight:bold;
+    width:180px;
+    display:inline-block;
+}
+
+.row{
+    margin-bottom:10px;
+}
+
+.download{
+    color:#3b82f6;
+    text-decoration:none;
+}
+
+.download:hover{
+    text-decoration:underline;
+}
+
+.valid{
+    color:#16a34a;
+    font-weight:bold;
+}
+</style>
+
+</head>
+<body>
+
+<div class="card">
+
+    <h1>Documento Válido</h1>
+
+    <div class="row">
+        <span class="label">Empleado:</span>
+        Cristhian Duber Zarate Timoteo
+    </div>
+
+    <div class="row">
+        <span class="label">Fecha Creación:</span>
+        15/10/2021 16:23
+    </div>
+
+    <div class="row">
+        <span class="label">Descargar Documento:</span>
+        <a class="download" href="contrato.pdf" target="_blank">
+            Descargar
+        </a>
+    </div>
+
+    <div class="section">
+
+        <h2>Firmado por el Empleado</h2>
+
+        <div class="row">
+            <span class="label">Nombre:</span>
+            Cristhian Duber Zarate Timoteo
+        </div>
+
+        <div class="row">
+            <span class="label">RUT:</span>
+            22.486.159-1
+        </div>
+
+        <div class="row">
+            <span class="label">Fecha Firma:</span>
+            16/10/2021 09:41
+        </div>
+
+        <div class="row">
+            <span class="label">IP:</span>
+            201.241.56.196
+        </div>
+
+        <div class="row">
+            <span class="label">Token:</span>
+            7577e8c19c1008...
+        </div>
+
+    </div>
+
+    <div class="section">
+
+        <h2>Firmado por Representante Legal</h2>
+
+        <div class="row">
+            <span class="label">Nombre:</span>
+            Ema Pérez Bobadilla
+        </div>
+
+        <div class="row">
+            <span class="label">RUT:</span>
+            15.215.457-7
+        </div>
+
+        <div class="row">
+            <span class="label">Fecha Firma:</span>
+            18/10/2021 16:35
+        </div>
+
+        <div class="row">
+            <span class="label">IP:</span>
+            201.189.68.4
+        </div>
+
+        <div class="row">
+            <span class="label">Token:</span>
+            73fd98b894e2e1...
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

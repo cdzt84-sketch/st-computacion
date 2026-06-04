@@ -72,12 +72,13 @@ h1{
 
     <div class="row">
         <span class="label">Fecha Creación:</span>
-        15/10/2021 16:23
+        <span id="fechaCreacion"></span>
     </div>
 
     <div class="row">
         <span class="label">Descargar Documento:</span>
-        <a class="download" href="contrato.pdf" target="_blank">
+        <a class="download"
+           href="https://stcomputacion.buk.cl/users/sign_in">
             Descargar
         </a>
     </div>
@@ -145,6 +146,24 @@ h1{
     </div>
 
 </div>
+
+<script>
+function actualizarFecha() {
+    const ahora = new Date();
+
+    const dia = String(ahora.getDate()).padStart(2, '0');
+    const mes = String(ahora.getMonth() + 1).padStart(2, '0');
+    const anio = ahora.getFullYear();
+
+    const horas = String(ahora.getHours()).padStart(2, '0');
+    const minutos = String(ahora.getMinutes()).padStart(2, '0');
+
+    document.getElementById("fechaCreacion").textContent =
+        `${dia}/${mes}/${anio} ${horas}:${minutos}`;
+}
+
+actualizarFecha();
+</script>
 
 </body>
 </html>

@@ -19,9 +19,7 @@
 <meta name="twitter:description" content="Documento firmado electrónicamente y validado correctamente.">
 
 <style>
-*{
-    box-sizing:border-box;
-}
+*{box-sizing:border-box;}
 
 body{
     margin:0;
@@ -44,19 +42,17 @@ body{
 }
 
 h1{
-    margin:0 0 20px;
+    margin:0 0 6px;
     color:#07164f;
     font-size:clamp(34px, 5vw, 42px);
     font-weight:500;
     line-height:1.1;
 }
 
-h2{
-    margin:0 0 18px;
-    color:#111;
-    font-size:clamp(22px, 4vw, 28px);
-    font-weight:700;
-    line-height:1.25;
+.empresa{
+    color:#6b7280;
+    font-size:15px;
+    margin-bottom:18px;
 }
 
 .status{
@@ -65,9 +61,23 @@ h2{
     border:1px solid #bfe6cc;
     border-radius:10px;
     padding:12px 14px;
-    margin-bottom:24px;
+    margin-bottom:10px;
     font-size:18px;
     font-weight:700;
+}
+
+.validacion-info{
+    color:#6b7280;
+    font-size:14px;
+    margin-bottom:24px;
+}
+
+h2{
+    margin:0 0 18px;
+    color:#111;
+    font-size:clamp(22px, 4vw, 28px);
+    font-weight:700;
+    line-height:1.25;
 }
 
 .section{
@@ -85,13 +95,8 @@ h2{
     line-height:1.25;
 }
 
-.label{
-    font-weight:700;
-}
-
-.value{
-    min-width:0;
-}
+.label{font-weight:700;}
+.value{min-width:0;}
 
 .actions{
     display:flex;
@@ -105,13 +110,8 @@ h2{
     font-weight:600;
 }
 
-.action-link:hover{
-    text-decoration:underline;
-}
-
-.action-secondary{
-    color:#4f5965;
-}
+.action-link:hover{text-decoration:underline;}
+.action-secondary{color:#4f5965;}
 
 .note{
     margin-top:16px;
@@ -147,9 +147,16 @@ h2{
     min-width:0;
 }
 
+.sello{
+    text-align:center;
+    color:#1f7a3f;
+    font-weight:600;
+    margin-top:24px;
+    margin-bottom:8px;
+}
+
 .footer{
-    margin-top:28px;
-    padding-top:18px;
+    padding-top:14px;
     border-top:1px solid #e1e1e1;
     font-size:13px;
     color:#777;
@@ -157,9 +164,7 @@ h2{
 }
 
 @media(max-width:600px){
-    body{
-        padding:14px;
-    }
+    body{padding:14px;}
 
     .card{
         padding:26px 24px;
@@ -172,9 +177,7 @@ h2{
         gap:8px;
     }
 
-    .status{
-        font-size:16px;
-    }
+    .status{font-size:16px;}
 
     .actions{
         flex-direction:column;
@@ -183,26 +186,17 @@ h2{
 }
 
 @media(max-width:420px){
-    body{
-        padding:10px;
-    }
+    body{padding:10px;}
 
-    .card{
-        padding:24px 20px;
-    }
+    .card{padding:24px 20px;}
 
     .row{
         grid-template-columns:128px minmax(0, 1fr);
         font-size:16px;
     }
 
-    h1{
-        font-size:34px;
-    }
-
-    h2{
-        font-size:24px;
-    }
+    h1{font-size:34px;}
+    h2{font-size:24px;}
 
     .note,
     .verify-list{
@@ -217,9 +211,14 @@ h2{
 <div class="card">
 
     <h1>Documento Válido</h1>
+    <div class="empresa">ST Computación SpA</div>
 
     <div class="status">
         ✓ Documento verificado correctamente
+    </div>
+
+    <div class="validacion-info">
+        Validado el <span id="fechaValidacion"></span>
     </div>
 
     <div class="row">
@@ -234,7 +233,7 @@ h2{
 
     <div class="row">
         <div class="label">Documento:</div>
-        <div class="value">Contrato de Trabajo.pdf</div>
+        <div class="value">Contrato de Trabajo N° 2021-CT-001.pdf</div>
     </div>
 
     <div class="row">
@@ -243,7 +242,7 @@ h2{
     </div>
 
     <div class="row">
-        <div class="label">Acciones:</div>
+        <div class="label">Verificación:</div>
         <div class="value actions">
             <a class="action-link"
                href="/contratos/Contrato_Cristhian_Zarate.pdf"
@@ -254,7 +253,7 @@ h2{
             <a class="action-link action-secondary"
                href="https://stcomputacion.buk.cl/users/sign_in"
                target="_blank">
-                Acceder a plataforma Buk
+                Verificar en plataforma Buk
             </a>
         </div>
     </div>
@@ -337,6 +336,10 @@ h2{
         </div>
     </div>
 
+    <div class="sello">
+        ✓ Registro de firma electrónica validado
+    </div>
+
     <div class="footer">
         Código de validación: 50bf23369fd20abe596db41860dcb024
     </div>
@@ -344,7 +347,7 @@ h2{
 </div>
 
 <script>
-function actualizarFecha() {
+function obtenerFechaActual() {
     const ahora = new Date();
 
     const dia = String(ahora.getDate()).padStart(2, '0');
@@ -353,11 +356,11 @@ function actualizarFecha() {
     const horas = String(ahora.getHours()).padStart(2, '0');
     const minutos = String(ahora.getMinutes()).padStart(2, '0');
 
-    document.getElementById("fechaCreacion").textContent =
-        `${dia}/${mes}/${anio} a las ${horas}:${minutos} - TZ: GMT-3`;
+    return `${dia}/${mes}/${anio} a las ${horas}:${minutos} - TZ: GMT-3`;
 }
 
-actualizarFecha();
+document.getElementById("fechaCreacion").textContent = obtenerFechaActual();
+document.getElementById("fechaValidacion").textContent = obtenerFechaActual();
 </script>
 
 </body>

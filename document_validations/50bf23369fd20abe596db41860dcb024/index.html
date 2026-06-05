@@ -93,14 +93,24 @@ h2{
     min-width:0;
 }
 
-.download{
-    color:#2d56a3;
-    text-decoration:none;
-    font-weight:500;
+.actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
 }
 
-.download:hover{
+.action-link{
+    color:#2d56a3;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.action-link:hover{
     text-decoration:underline;
+}
+
+.action-secondary{
+    color:#4f5965;
 }
 
 .note{
@@ -112,6 +122,21 @@ h2{
     font-size:15px;
     line-height:1.35;
     color:#444;
+}
+
+.verify-list{
+    margin:14px 0 0;
+    padding-left:0;
+    list-style:none;
+    font-size:15px;
+    line-height:1.5;
+    color:#444;
+}
+
+.verify-list li::before{
+    content:"✓ ";
+    color:#1f7a3f;
+    font-weight:700;
 }
 
 .token{
@@ -150,6 +175,11 @@ h2{
     .status{
         font-size:16px;
     }
+
+    .actions{
+        flex-direction:column;
+        gap:6px;
+    }
 }
 
 @media(max-width:420px){
@@ -174,7 +204,8 @@ h2{
         font-size:24px;
     }
 
-    .note{
+    .note,
+    .verify-list{
         font-size:14px;
     }
 }
@@ -212,18 +243,30 @@ h2{
     </div>
 
     <div class="row">
-        <div class="label">Descargar Documento:</div>
-        <div class="value">
-            <a class="download"
+        <div class="label">Acciones:</div>
+        <div class="value actions">
+            <a class="action-link"
                href="/contratos/Contrato_Cristhian_Zarate.pdf"
                target="_blank">
-                Descargar
+                Descargar contrato PDF
+            </a>
+
+            <a class="action-link action-secondary"
+               href="https://stcomputacion.buk.cl/users/sign_in"
+               target="_blank">
+                Acceder a plataforma Buk
             </a>
         </div>
     </div>
 
     <div class="note">
         La información presentada corresponde a los datos registrados durante el proceso de firma electrónica del documento.
+        <ul class="verify-list">
+            <li>Documento firmado electrónicamente.</li>
+            <li>Documento asociado al código de validación indicado.</li>
+            <li>Archivo PDF disponible para consulta y descarga.</li>
+            <li>Validación vinculada a plataforma de RRHH.</li>
+        </ul>
     </div>
 
     <div class="section">
